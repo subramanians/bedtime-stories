@@ -38,13 +38,11 @@ git commit -m "Bedtime Stories app"
 git branch -M main
 ```
 
-Now add your GitHub repo (replace `YOUR_GITHUB_USERNAME` with your username):
+Now add your GitHub repo:
 
 ```bash
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/bedtime-stories.git
+git remote add origin https://github.com/subramanians/bedtime-stories.git
 ```
-
-If your repo has a different name, use that instead of `bedtime-stories` in the URL.
 
 Then push:
 
