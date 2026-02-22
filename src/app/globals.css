@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --night-bg: #0f0d24;
+  --night-surface: #1e1b4b;
+  --warm-cream: #fef9f3;
+  --warm-gold: #e8b86d;
+  --star-glow: rgba(232, 184, 109, 0.6);
+}
+
+body {
+  background: var(--night-bg);
+  color: var(--warm-cream);
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Cozy scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1b4b;
+}
+::-webkit-scrollbar-thumb {
+  background: #4338ca;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
