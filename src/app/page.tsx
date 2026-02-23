@@ -78,8 +78,10 @@ export default function Home() {
   }[backgroundTheme];
 
   return (
-    <div className={`relative min-h-screen overflow-hidden transition-colors duration-500 ${themeConfig.bg}`}>
-      {/* Starry / accent background */}
+    <div
+      className={`relative min-h-screen overflow-hidden transition-colors duration-500 ${themeConfig.bg}`}
+    >
+      {/* Decorative stars */}
       <div className="pointer-events-none fixed inset-0">
         <div className={`absolute left-[10%] top-[15%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-warm-gold/80" : backgroundTheme === "sunset" ? "bg-amber-200/90" : "bg-emerald-300/80"}`} />
         <div className={`absolute left-[20%] top-[25%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-white/70" : backgroundTheme === "sunset" ? "bg-orange-100/80" : "bg-lime-200/60"}`} style={{ animationDelay: "0.5s" }} />
@@ -90,51 +92,58 @@ export default function Home() {
         <div className={`absolute left-[50%] top-[10%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-warm-gold/50" : backgroundTheme === "sunset" ? "bg-amber-200/60" : "bg-emerald-300/60"}`} style={{ animationDelay: "0.8s" }} />
       </div>
 
-      {/* Moon / focal glow */}
-      <div className={`absolute right-8 top-12 h-24 w-24 rounded-full bg-gradient-to-br blur-sm md:right-16 md:top-16 md:h-32 md:w-32 ${themeConfig.moon}`} />
+      {/* Moon glow */}
+      <div
+        className={`absolute right-8 top-12 h-24 w-24 rounded-full bg-gradient-to-br blur-sm md:right-16 md:top-16 md:h-32 md:w-32 ${themeConfig.moon}`}
+      />
 
-      <main className="relative mx-auto max-w-2xl px-4 py-10 sm:px-6 sm:py-14">
-        <header className="mb-6 text-center">
+      <main className="relative mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12">
+        {/* Header */}
+        <header className="mb-8 text-center">
           <h1 className="font-display animate-float text-4xl font-bold tracking-tight text-warm-cream sm:text-5xl md:text-6xl">
             Bedtime Stories
           </h1>
-          <p className="mt-3 text-lg text-warm-cream/80">
-            Create a personalized story. Pick the age, theme, humour, and calmness.
+          <p className="mt-2 text-lg text-warm-cream/75">
+            Create a personalized story or choose a classic folktale from around the world.
           </p>
         </header>
 
-        {/* Background theme selector - in content flow for mobile */}
-        <div className="mb-6 flex justify-center">
-          <fieldset className="rounded-xl border border-white/20 bg-black/20 px-4 py-3 backdrop-blur-sm">
-            <legend className="px-1 text-xs font-medium text-warm-cream/90">Background</legend>
+        {/* Background selector */}
+        <div className="mb-8 flex justify-center">
+          <fieldset className="rounded-2xl border border-white/15 bg-white/5 px-5 py-3 backdrop-blur-sm">
+            <legend className="px-1 text-xs font-medium text-warm-cream/80">
+              Background
+            </legend>
             <div className="flex flex-wrap justify-center gap-2">
-              {THEMES.map((theme) => (
+              {THEMES.map((t) => (
                 <button
-                  key={theme.id}
+                  key={t.id}
                   type="button"
-                  onClick={() => setBackgroundTheme(theme.id)}
-                  className={`rounded-lg px-3 py-1.5 text-sm font-medium transition ${
-                    backgroundTheme === theme.id
-                      ? "bg-warm-gold text-night-950"
+                  onClick={() => setBackgroundTheme(t.id)}
+                  className={`rounded-xl px-4 py-2 text-sm font-medium transition ${
+                    backgroundTheme === t.id
+                      ? "bg-warm-gold text-night-950 shadow-md"
                       : "text-warm-cream/90 hover:bg-white/10"
                   }`}
                 >
-                  {theme.label}
+                  {t.label}
                 </button>
               ))}
             </div>
           </fieldset>
         </div>
 
+        {/* Error */}
         {error && (
           <div
             role="alert"
-            className="mb-6 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-red-200"
+            className="mb-6 rounded-xl border border-red-400/30 bg-red-500/15 px-4 py-3 text-red-100"
           >
             {error}
           </div>
         )}
 
+        {/* Content */}
         {storyResult?.story ? (
           <StoryDisplay
             story={storyResult.story}
@@ -142,7 +151,9 @@ export default function Home() {
             onReset={handleReset}
           />
         ) : (
-          <StoryForm onSubmit={handleSubmit} isGenerating={isGenerating} />
+          <div className="rounded-2xl border border-white/15 bg-white/5 p-6 shadow-xl backdrop-blur-sm sm:p-8">
+            <StoryForm onSubmit={handleSubmit} isGenerating={isGenerating} />
+          </div>
         )}
       </main>
     </div>

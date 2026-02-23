@@ -116,6 +116,178 @@ A greedy king took the brush. He painted gold, but it turned to snakes. Ma Liang
     ageMin: 5,
     ageMax: 12,
   },
+  // Japan
+  {
+    id: "japan-momotaro",
+    title: "Momotaro, the Peach Boy",
+    country: "Japan",
+    story: `An old couple found a giant peach floating on the river. Inside was a baby boy. They named him Momotaro, "Peach Boy."
+
+When Momotaro grew up, he went to fight the ogres on Onigashima Island. On the way, a dog, a monkey, and a pheasant joined him. Together they defeated the ogres and brought back treasure for the kind couple.
+
+Courage and friends can overcome any challenge.`,
+    ageMin: 4,
+    ageMax: 11,
+  },
+  {
+    id: "japan-urashima",
+    title: "Urashima Taro",
+    country: "Japan",
+    story: `Urashima Taro saved a turtle. The turtle took him to the Dragon Palace under the sea. The princess gave him a box and said, "Do not open it."
+
+When he returned home, many years had passed. He opened the box. Smoke came out and he became an old man. Time passes differently in magical places. We must keep our promises.`,
+    ageMin: 5,
+    ageMax: 12,
+  },
+  // Africa
+  {
+    id: "africa-anansi-tiger",
+    title: "Anansi and the Tiger",
+    country: "Africa",
+    story: `Anansi the spider was small but clever. Tiger had all the stories. Anansi tricked Tiger into a race. Tiger ran fast, but Anansi hid in Tiger's ear and rode along.
+
+At the finish, Anansi jumped out and won. Tiger had to give him the stories. From then on, Anansi shared stories with everyone. Cleverness can beat strength.`,
+    ageMin: 4,
+    ageMax: 11,
+  },
+  {
+    id: "africa-tortoise-hawk",
+    title: "Why the Tortoise Has a Cracked Shell",
+    country: "Africa",
+    story: `Tortoise wanted to go to a feast in the sky. He could not fly. He asked the birds for feathers. They gave him some. Tortoise flew up with them.
+
+At the feast, Tortoise ate the most. The birds were angry. They took their feathers back. Tortoise fell and cracked his shell. Greed brings trouble.`,
+    ageMin: 4,
+    ageMax: 10,
+  },
+  // Arabia
+  {
+    id: "arabia-sindbad",
+    title: "Sindbad and the Giant Bird",
+    country: "Arabia",
+    story: `Sindbad the sailor was stranded on an island. He found a huge white egg. A giant bird came and sat on it. Sindbad tied himself to the bird's leg.
+
+The bird flew over the sea and mountains. Sindbad was carried to a valley full of diamonds. He filled his pockets and later escaped. Patience and courage bring reward.`,
+    ageMin: 5,
+    ageMax: 12,
+  },
+  {
+    id: "arabia-aladdin-lamp",
+    title: "Aladdin and the Wonderful Lamp",
+    country: "Arabia",
+    story: `Aladdin found a magic lamp. When he rubbed it, a genie appeared. The genie granted wishes. Aladdin wished for a palace and to marry the princess.
+
+A wicked magician stole the lamp. Aladdin used his wits to get it back. He and the princess lived happily. True happiness comes from the heart, not magic.`,
+    ageMin: 5,
+    ageMax: 12,
+  },
+  // Russia
+  {
+    id: "russia-kolobok",
+    title: "The Little Round Bun (Kolobok)",
+    country: "Russia",
+    story: `A grandmother baked a little round bun. It jumped off the table and rolled away. On the road it met a hare, a wolf, and a bear. It sang a song and rolled away from each.
+
+Then it met a fox. The fox asked it to sing. The bun sang. The fox said, "Sit on my nose so I can hear better." The bun did, and the fox ate it. Do not trust flattery.`,
+    ageMin: 3,
+    ageMax: 9,
+  },
+  {
+    id: "russia-masha-bear",
+    title: "Masha and the Bear",
+    country: "Russia",
+    story: `Masha got lost in the forest. A bear found her and took her to his house. He made her cook and clean. Masha wanted to go home.
+
+She baked pies and asked the bear to take them to her grandparents. She hid in the basket. The bear carried her home. Masha was free. Cleverness wins.`,
+    ageMin: 4,
+    ageMax: 10,
+  },
+  // England / UK
+  {
+    id: "england-three-pigs",
+    title: "The Three Little Pigs",
+    country: "England",
+    story: `Three little pigs left home. One built a house of straw, one of sticks, one of bricks. A wolf came. He blew down the straw and stick houses. The pigs ran to the brick house.
+
+The wolf could not blow it down. He tried the chimney. The pigs lit a fire. The wolf fell in and ran away. Hard work and planning keep us safe.`,
+    ageMin: 3,
+    ageMax: 9,
+  },
+  {
+    id: "england-goldilocks",
+    title: "Goldilocks and the Three Bears",
+    country: "England",
+    story: `Goldilocks walked into the bears' house. She ate the little bear's porridge, broke his chair, and slept in his bed.
+
+The bears came home. Goldilocks woke and ran away. She learned to respect others' things. We must not take what is not ours.`,
+    ageMin: 3,
+    ageMax: 8,
+  },
+  // Germany
+  {
+    id: "germany-bremen-musicians",
+    title: "The Bremen Town Musicians",
+    country: "Germany",
+    story: `A donkey, a dog, a cat, and a rooster were too old to work. They set off to become musicians in Bremen. At night they saw a cottage with robbers inside.
+
+They stood on each other's backs and made a loud noise. The robbers ran away. The animals lived in the cottage happily. Friends together are strong.`,
+    ageMin: 4,
+    ageMax: 10,
+  },
+  {
+    id: "germany-frog-king",
+    title: "The Frog King",
+    country: "Germany",
+    story: `A princess dropped her golden ball into a well. A frog said he would get it if she took him home. She promised but did not mean it.
+
+Her father said she must keep her word. The frog came. When the princess was kind to him, he turned into a prince. A promise kept brings reward.`,
+    ageMin: 4,
+    ageMax: 10,
+  },
+  // Ireland
+  {
+    id: "ireland-leprechaun",
+    title: "The Leprechaun's Gold",
+    country: "Ireland",
+    story: `A farmer caught a leprechaun. The leprechaun said his gold was under a bush. The farmer tied a ribbon on the bush and went for a shovel.
+
+When he returned, every bush had a ribbon. The leprechaun had tricked him. Greed makes us foolish. The leprechaun was gone.`,
+    ageMin: 5,
+    ageMax: 11,
+  },
+  // Korea
+  {
+    id: "korea-sun-moon",
+    title: "The Sun and the Moon",
+    country: "Korea",
+    story: `A tiger chased a mother and her two children. The mother grabbed a rope and climbed to the sky. She pulled up the children. The tiger tried but fell.
+
+The mother became the sun. Her daughter became the moon. Her son became the stars. They shine over us still. Love protects us forever.`,
+    ageMin: 4,
+    ageMax: 10,
+  },
+  // Mexico
+  {
+    id: "mexico-rabbit-moon",
+    title: "The Rabbit on the Moon",
+    country: "Mexico",
+    story: `The god Quetzalcoatl was hungry. A rabbit offered itself as food. Quetzalcoatl was moved. He did not eat the rabbit. Instead, he placed its image on the moon so all would remember its kindness.
+
+When you look at the moon, you can see the rabbit. Kindness is never forgotten.`,
+    ageMin: 4,
+    ageMax: 11,
+  },
+  // Norway
+  {
+    id: "norway-three-goats",
+    title: "The Three Billy Goats Gruff",
+    country: "Norway",
+    story: `Three goats wanted to cross a bridge. A troll lived underneath. The small goat said, "Wait for my bigger brother." The troll let him pass. The middle goat said the same.
+
+The big goat came. He charged the troll and threw him into the river. The troll was gone. The goats ate grass on the hill. Bravery protects the weak.`,
+    ageMin: 3,
+    ageMax: 9,
+  },
 ];
 
 export function getFolktalesByCountry(country: string): Folktale[] {
@@ -141,4 +313,14 @@ export const COUNTRIES = [
   { id: "India", label: "India (Panchatantra)" },
   { id: "Greece", label: "Greece (Aesop's Fables)" },
   { id: "China", label: "China" },
+  { id: "Japan", label: "Japan" },
+  { id: "Africa", label: "Africa" },
+  { id: "Arabia", label: "Arabia" },
+  { id: "Russia", label: "Russia" },
+  { id: "England", label: "England" },
+  { id: "Germany", label: "Germany" },
+  { id: "Ireland", label: "Ireland" },
+  { id: "Korea", label: "Korea" },
+  { id: "Mexico", label: "Mexico" },
+  { id: "Norway", label: "Norway" },
 ];
