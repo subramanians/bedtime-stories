@@ -5,6 +5,8 @@ export type StoryPreferences = {
   humourLevel: number;
   calmnessLevel: number;
   storyLength: "short" | "medium" | "long";
+  storySource: "ai" | "folktale";
+  country?: string;
   characterName?: string;
   customPrompt?: string;
 };

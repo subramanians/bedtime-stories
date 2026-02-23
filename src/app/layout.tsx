@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Crimson_Text, Fraunces } from "next/font/google";
+import { Lora, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const crimson = Crimson_Text({
+const lora = Lora({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  variable: "--font-crimson",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-lora",
   display: "swap",
 });
 
-const fraunces = Fraunces({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-fraunces",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-playfair",
   display: "swap",
 });
 
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${crimson.variable} ${fraunces.variable}`}>
+    <html lang="en" className={`${lora.variable} ${playfair.variable}`}>
       <body className="font-serif antialiased">{children}</body>
     </html>
   );

@@ -30,8 +30,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ["var(--font-crimson)", "Georgia", "serif"],
-        display: ["var(--font-fraunces)", "Georgia", "serif"],
+        serif: ["var(--font-lora)", "Georgia", "serif"],
+        display: ["var(--font-playfair)", "Georgia", "serif"],
       },
       keyframes: {
         twinkle: {

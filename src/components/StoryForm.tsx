@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { COUNTRIES } from "@/data/folktales";
 import type { StoryPreferences } from "@/types/story";
 
 const THEMES = [
@@ -34,11 +35,16 @@ export default function StoryForm({ onSubmit, isGenerating }: Props) {
   const [humourLevel, setHumourLevel] = useState(5);
   const [calmnessLevel, setCalmnessLevel] = useState(7);
   const [storyLength, setStoryLength] = useState<"short" | "medium" | "long">("medium");
+  const [storySource, setStorySource] = useState<"ai" | "folktale">("ai");
+  const [country, setCountry] = useState("");
   const [characterName, setCharacterName] = useState("");
   const [customPrompt, setCustomPrompt] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (storySource === "folktale" && !country) {
+      return;
+    }
     onSubmit({
       age,
       gender,
@@ -46,6 +52,8 @@ export default function StoryForm({ onSubmit, isGenerating }: Props) {
       humourLevel,
       calmnessLevel,
       storyLength,
+      storySource,
+      country: storySource === "folktale" ? country : undefined,
       characterName: characterName.trim() || undefined,
       customPrompt: customPrompt.trim() || undefined,
     });
@@ -106,6 +114,61 @@ export default function StoryForm({ onSubmit, isGenerating }: Props) {
       </div>
 
       <div>
+        <label className="mb-2 block text-sm font-medium text-warm-gold">
+          Story type
+        </label>
+        <div className="flex flex-wrap gap-3">
+          <label className="flex cursor-pointer items-center gap-2">
+            <input
+              type="radio"
+              name="storySource"
+              value="ai"
+              checked={storySource === "ai"}
+              onChange={() => setStorySource("ai")}
+              className="accent-warm-gold"
+            />
+            <span className="text-warm-cream/90">AI generated</span>
+          </label>
+          <label className="flex cursor-pointer items-center gap-2">
+            <input
+              type="radio"
+              name="storySource"
+              value="folktale"
+              checked={storySource === "folktale"}
+              onChange={() => setStorySource("folktale")}
+              className="accent-warm-gold"
+            />
+            <span className="text-warm-cream/90">Classic folktale</span>
+          </label>
+        </div>
+      </div>
+
+      {storySource === "folktale" && (
+        <div>
+          <label htmlFor="country" className="mb-2 block text-sm font-medium text-warm-gold">
+            Country
+          </label>
+          <select
+            id="country"
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+            required={storySource === "folktale"}
+            className="w-full rounded-lg border border-night-700 bg-night-800 px-4 py-2.5 text-warm-cream focus:border-warm-gold focus:outline-none focus:ring-1 focus:ring-warm-gold"
+          >
+            <option value="">Choose a country</option>
+            {COUNTRIES.map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.label}
+              </option>
+            ))}
+          </select>
+          <p className="mt-1.5 text-xs text-warm-cream/70">
+            Real traditional stories (Panchatantra, Aesop&apos;s Fables, etc.)
+          </p>
+        </div>
+      )}
+
+      <div>
         <label htmlFor="theme" className="mb-2 block text-sm font-medium text-warm-gold">
           Theme
         </label>
@@ -121,6 +184,9 @@ export default function StoryForm({ onSubmit, isGenerating }: Props) {
             </option>
           ))}
         </select>
+        <p className="mt-1.5 text-xs text-warm-cream/70">
+          {storySource === "folktale" ? "Not used for classic folktales" : "Used for AI stories"}
+        </p>
       </div>
 
       <div>

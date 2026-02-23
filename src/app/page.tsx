@@ -3,6 +3,7 @@
 import { useState } from "react";
 import StoryForm from "@/components/StoryForm";
 import StoryDisplay from "@/components/StoryDisplay";
+import { getRandomFolktaleForAge } from "@/data/folktales";
 import type { StoryPreferences, StoryResponse } from "@/types/story";
 
 export type BackgroundTheme = "night" | "sunset" | "forest";
@@ -25,6 +26,16 @@ export default function Home() {
     setIsGenerating(true);
 
     try {
+      if (prefs.storySource === "folktale" && prefs.country) {
+        const folktale = getRandomFolktaleForAge(prefs.country, prefs.age);
+        if (folktale) {
+          setStoryResult({ story: folktale.story, title: folktale.title });
+        } else {
+          setError("No folktale found for this country and age. Try a different country.");
+        }
+        return;
+      }
+
       const res = await fetch("/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -82,31 +93,8 @@ export default function Home() {
       {/* Moon / focal glow */}
       <div className={`absolute right-8 top-12 h-24 w-24 rounded-full bg-gradient-to-br blur-sm md:right-16 md:top-16 md:h-32 md:w-32 ${themeConfig.moon}`} />
 
-      {/* Background theme selector */}
-      <div className="fixed right-4 top-4 z-10 sm:right-6 sm:top-6">
-        <fieldset className="rounded-xl border border-white/20 bg-black/20 px-3 py-2 backdrop-blur-sm">
-          <legend className="px-1 text-xs font-medium text-warm-cream/90">Background</legend>
-          <div className="flex gap-2">
-            {THEMES.map((theme) => (
-              <button
-                key={theme.id}
-                type="button"
-                onClick={() => setBackgroundTheme(theme.id)}
-                className={`rounded-lg px-3 py-1.5 text-sm font-medium transition ${
-                  backgroundTheme === theme.id
-                    ? "bg-warm-gold text-night-950"
-                    : "text-warm-cream/90 hover:bg-white/10"
-                }`}
-              >
-                {theme.label}
-              </button>
-            ))}
-          </div>
-        </fieldset>
-      </div>
-
       <main className="relative mx-auto max-w-2xl px-4 py-10 sm:px-6 sm:py-14">
-        <header className="mb-10 text-center">
+        <header className="mb-6 text-center">
           <h1 className="font-display animate-float text-4xl font-bold tracking-tight text-warm-cream sm:text-5xl md:text-6xl">
             Bedtime Stories
           </h1>
@@ -114,6 +102,29 @@ export default function Home() {
             Create a personalized story. Pick the age, theme, humour, and calmness.
           </p>
         </header>
+
+        {/* Background theme selector - in content flow for mobile */}
+        <div className="mb-6 flex justify-center">
+          <fieldset className="rounded-xl border border-white/20 bg-black/20 px-4 py-3 backdrop-blur-sm">
+            <legend className="px-1 text-xs font-medium text-warm-cream/90">Background</legend>
+            <div className="flex flex-wrap justify-center gap-2">
+              {THEMES.map((theme) => (
+                <button
+                  key={theme.id}
+                  type="button"
+                  onClick={() => setBackgroundTheme(theme.id)}
+                  className={`rounded-lg px-3 py-1.5 text-sm font-medium transition ${
+                    backgroundTheme === theme.id
+                      ? "bg-warm-gold text-night-950"
+                      : "text-warm-cream/90 hover:bg-white/10"
+                  }`}
+                >
+                  {theme.label}
+                </button>
+              ))}
+            </div>
+          </fieldset>
+        </div>
 
         {error && (
           <div
