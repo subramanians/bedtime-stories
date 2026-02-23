@@ -66,6 +66,47 @@ export default function StoryForm({ onSubmit, isGenerating }: Props) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
+      {/* Story type - first so user picks AI vs Folktale before other options */}
+      <section>
+        <h2 className={`${sectionTitle} mb-4`}>Story type</h2>
+        <div className="flex flex-wrap gap-3">
+          <label
+            className={`flex cursor-pointer items-center gap-2 rounded-xl border px-4 py-3 transition ${
+              storySource === "ai"
+                ? "border-warm-gold/50 bg-warm-gold/10 text-warm-gold"
+                : "border-white/15 bg-white/5 text-warm-cream/80 hover:border-white/25"
+            }`}
+          >
+            <input
+              type="radio"
+              name="storySource"
+              value="ai"
+              checked={storySource === "ai"}
+              onChange={() => setStorySource("ai")}
+              className="accent-warm-gold"
+            />
+            <span className="font-medium">AI generated</span>
+          </label>
+          <label
+            className={`flex cursor-pointer items-center gap-2 rounded-xl border px-4 py-3 transition ${
+              storySource === "folktale"
+                ? "border-warm-gold/50 bg-warm-gold/10 text-warm-gold"
+                : "border-white/15 bg-white/5 text-warm-cream/80 hover:border-white/25"
+            }`}
+          >
+            <input
+              type="radio"
+              name="storySource"
+              value="folktale"
+              checked={storySource === "folktale"}
+              onChange={() => setStorySource("folktale")}
+              className="accent-warm-gold"
+            />
+            <span className="font-medium">Classic folktale</span>
+          </label>
+        </div>
+      </section>
+
       {/* Child's age - always shown */}
       <section>
         <h2 className={`${sectionTitle} mb-4`}>For the child</h2>
@@ -119,47 +160,6 @@ export default function StoryForm({ onSubmit, isGenerating }: Props) {
             />
           </div>
         )}
-      </section>
-
-      {/* Story type */}
-      <section>
-        <h2 className={`${sectionTitle} mb-4`}>Story type</h2>
-        <div className="flex flex-wrap gap-3">
-          <label
-            className={`flex cursor-pointer items-center gap-2 rounded-xl border px-4 py-3 transition ${
-              storySource === "ai"
-                ? "border-warm-gold/50 bg-warm-gold/10 text-warm-gold"
-                : "border-white/15 bg-white/5 text-warm-cream/80 hover:border-white/25"
-            }`}
-          >
-            <input
-              type="radio"
-              name="storySource"
-              value="ai"
-              checked={storySource === "ai"}
-              onChange={() => setStorySource("ai")}
-              className="accent-warm-gold"
-            />
-            <span className="font-medium">AI generated</span>
-          </label>
-          <label
-            className={`flex cursor-pointer items-center gap-2 rounded-xl border px-4 py-3 transition ${
-              storySource === "folktale"
-                ? "border-warm-gold/50 bg-warm-gold/10 text-warm-gold"
-                : "border-white/15 bg-white/5 text-warm-cream/80 hover:border-white/25"
-            }`}
-          >
-            <input
-              type="radio"
-              name="storySource"
-              value="folktale"
-              checked={storySource === "folktale"}
-              onChange={() => setStorySource("folktale")}
-              className="accent-warm-gold"
-            />
-            <span className="font-medium">Classic folktale</span>
-          </label>
-        </div>
       </section>
 
       {/* Folktale: country only */}
