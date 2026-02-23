@@ -62,6 +62,50 @@ Where there is a will, there is a way. The crow did not give up. He thought and 
     ageMin: 3,
     ageMax: 9,
   },
+  {
+    id: "panchatantra-monkey-crocodile-long",
+    title: "The Monkey and the Crocodile",
+    country: "India",
+    story: `Long ago, on the banks of a wide river, there grew a beautiful rose-apple tree. Its branches stretched over the water, and its fruit was sweet and golden. In that tree lived a clever monkey. He spent his days eating the fruit and swinging from branch to branch.
+
+One day, a crocodile swam up to the tree. He had come from the other side of the river and was very hungry. The monkey saw him and said, "Friend, why do you look so tired?" The crocodile said, "I have swum far and found nothing to eat." The kind monkey threw down some ripe fruit. The crocodile ate and was grateful. From that day on, they became friends.
+
+Every day the crocodile came to eat the fruit. He took some home to his wife. She ate the sweet rose-apples and thought, "If the fruit is so delicious, the monkey who eats it every day must be even sweeter. I want to eat his heart."
+
+The crocodile was sad. He loved his friend the monkey. But his wife insisted. "Bring me the monkey's heart, or I will not eat and I will die," she said. At last the crocodile agreed.
+
+The next day he went to the monkey. "My wife wishes to meet you," he said. "She has prepared a feast. Please come to our home." The monkey was happy. "But how can I come? I cannot swim," he said. The crocodile said, "Climb on my back. I will carry you across the river."
+
+The monkey climbed on. The crocodile swam. When they reached the middle of the river, he sank a little and said, "I am sorry, friend. My wife does not want to meet you. She wants to eat your heart."
+
+The monkey was afraid, but he did not panic. He thought quickly. "Oh, what a pity!" he said. "I would have given it gladly. But I left my heart in the tree. We must go back and get it." The crocodile believed him and swam back. The monkey leaped to the tree and said, "My heart is always with me. You cannot trick a friend. Go away."
+
+The crocodile swam away, ashamed. The wise stay safe by using their wits.`,
+    ageMin: 5,
+    ageMax: 12,
+  },
+  {
+    id: "panchatantra-lion-mouse-long",
+    title: "The Lion and the Mouse",
+    country: "India",
+    story: `In a great forest, there lived a mighty lion. He was the king of all the beasts. When he roared, the trees trembled and the animals hid. No one dared to wake him when he slept.
+
+One hot afternoon, the lion lay down under a shady tree. He closed his eyes and soon fell asleep. A little mouse, who lived in a hole nearby, came out to play. She did not see the lion. She ran across his nose, then his paw, then his mane.
+
+The lion woke with a roar. He opened his great mouth and caught the mouse in his paw. "How dare you disturb my sleep!" he said. The mouse shook with fear. "Please, great king," she said, "I did not mean to wake you. I was only playing. Let me go. One day I may help you."
+
+The lion laughed. "You? Help me? You are so small. What could you ever do for me?" But he was in a good mood. He opened his paw and let the mouse go. "Run away, little one. I will not eat you today."
+
+The mouse thanked him and ran home. The lion went back to sleep.
+
+Days later, hunters came to the forest. They set a strong net to catch the lion. When the lion walked into it, the net closed around him. He roared and struggled, but the ropes were too strong. The hunters would come soon to take him.
+
+The little mouse heard the lion's roar. She ran to him. "Do not worry, great king," she said. "I will help you." She began to chew the ropes. She chewed and chewed. Her teeth were small, but she did not give up. At last the ropes broke. The lion was free.
+
+"You were right," said the lion. "No one is too small to help. I will never forget your kindness." From that day on, the lion and the mouse were friends. Even the little can help the great.`,
+    ageMin: 5,
+    ageMax: 12,
+  },
   // Greece - Aesop's Fables
   {
     id: "aesop-tortoise-hare",
@@ -95,6 +139,30 @@ Those who lie are not believed when they tell the truth.`,
     ageMin: 4,
     ageMax: 11,
   },
+  {
+    id: "aesop-tortoise-hare-long",
+    title: "The Tortoise and the Hare",
+    country: "Greece",
+    story: `In a green meadow, there lived a hare. He was the fastest animal for miles. He could run like the wind. When he raced, no one could beat him. The hare knew this and loved to boast. "I am the fastest in the land!" he would say. "No one can catch me!"
+
+One day he saw a tortoise walking slowly along the path. The tortoise took one small step, then another. The hare laughed. "You are so slow!" he said. "I could run to the hill and back before you take ten steps."
+
+The tortoise did not get angry. He said quietly, "Perhaps. But let us run a race. We will start at the old oak tree and end at the river. The first to reach the river wins."
+
+The hare could not believe it. "A race? With you? You will lose before we begin!" But the tortoise insisted. The hare agreed. "This will be easy," he thought.
+
+The race began. The hare ran like lightning. In moments he was far ahead. He looked back. The tortoise was still at the start, plodding along. "I have plenty of time," the hare said. "I will rest under this tree. A short nap, then I will finish the race."
+
+He lay down in the shade. The sun was warm. The hare closed his eyes and fell fast asleep.
+
+The tortoise kept walking. Step by step. He did not stop. He did not look back. He simply walked toward the river.
+
+Hours passed. The hare woke with a start. He leaped up and ran. But when he reached the river, the tortoise was already there. The tortoise had won.
+
+"You see," said the tortoise. "Slow and steady wins the race." The hare hung his head. He had learned that speed alone is not enough. Slow and steady wins the race.`,
+    ageMin: 5,
+    ageMax: 12,
+  },
   // China
   {
     id: "china-monkey-king-peach",
@@ -114,6 +182,24 @@ One day, a fierce beast came. The Monkey King stood brave. He used his wits and 
 
 A greedy king took the brush. He painted gold, but it turned to snakes. Ma Liang painted a sea and a boat. The king sailed away. The brush returned to Ma Liang. He used it only for good. Use gifts to help others.`,
     ageMin: 5,
+    ageMax: 12,
+  },
+  {
+    id: "china-magic-paintbrush-long",
+    title: "Ma Liang and the Magic Paintbrush",
+    country: "China",
+    story: `Long ago, in a small village in China, there lived a boy named Ma Liang. He was very poor. He had no money for paper or brushes. But he loved to paint. He drew pictures in the sand with a stick. He drew on the walls with charcoal. He dreamed of having a real brush.
+
+One night, an old man with a long white beard appeared in his dream. "You have a kind heart," said the old man. "I will give you a magic brush. Use it only for good." When Ma Liang woke, he found a beautiful brush beside him.
+
+He painted a bird. The bird flew away. He painted a fish. The fish swam in the air, then dove into a bowl of water and came to life. Whatever Ma Liang painted became real! He was overjoyed. He painted food for the hungry villagers. He painted tools for the farmers. He painted warm clothes for the poor. Everyone was grateful.
+
+But the wicked king heard of the magic brush. He sent his soldiers to take it. "Paint me a mountain of gold!" the king demanded. Ma Liang painted a mountain of gold. But when the king touched it, it turned into snakes. The king was furious. He threw Ma Liang into prison.
+
+In the dungeon, Ma Liang had an idea. He asked for his brush and painted a door on the wall. The door opened. He escaped. The king chased him. Ma Liang painted a horse and rode away. The king followed on his own horse. Ma Liang painted a sea. The king's soldiers could not cross. The king demanded a boat. Ma Liang painted a boat. The king climbed in. Ma Liang painted a wind. The wind blew the boat far out to sea. The king sailed away and was never seen again.
+
+Ma Liang returned to his village with the magic brush. He used it only for good, to help others, for the rest of his days. Use gifts to help others.`,
+    ageMin: 6,
     ageMax: 12,
   },
   // Japan
@@ -222,6 +308,26 @@ The wolf could not blow it down. He tried the chimney. The pigs lit a fire. The 
 The bears came home. Goldilocks woke and ran away. She learned to respect others' things. We must not take what is not ours.`,
     ageMin: 3,
     ageMax: 8,
+  },
+  {
+    id: "england-three-pigs-long",
+    title: "The Three Little Pigs",
+    country: "England",
+    story: `Once upon a time, there were three little pigs. They left their mother's house to build homes of their own. The first pig was lazy. He built his house of straw. It took only a day. "Done!" he said, and went to play.
+
+The second pig was a little wiser. He built his house of sticks. It took a few days. "Good enough," he said, and went to play.
+
+The third pig was the wisest. He built his house of bricks. It took many weeks. His brothers laughed. "Why work so hard?" they asked. But the third pig did not mind. He wanted a strong home.
+
+One day a big bad wolf came to the first pig's house. "Little pig, little pig, let me come in!" he said. "Not by the hair of my chinny chin chin!" said the pig. "Then I'll huff and I'll puff and I'll blow your house in!" said the wolf. He huffed and he puffed, and the straw house fell down. The first pig ran to his brother's house.
+
+The wolf came to the stick house. "Little pigs, let me come in!" "Not by the hairs of our chinny chin chins!" "Then I'll huff and I'll puff and I'll blow your house in!" The wolf huffed and puffed, and the stick house fell down. The two pigs ran to their brother's brick house.
+
+The wolf came to the brick house. "Little pigs, let me come in!" "Not by the hairs of our chinny chin chins!" "Then I'll huff and I'll puff and I'll blow your house in!" The wolf huffed and puffed. He huffed and puffed again. The brick house did not move. The wolf climbed to the roof and slid down the chimney. The third pig had a pot of boiling water in the fireplace. The wolf fell in and ran away, and never came back.
+
+The three pigs lived safely in the brick house. The first two pigs had learned: hard work and planning keep us safe.`,
+    ageMin: 5,
+    ageMax: 12,
   },
   // Germany
   {

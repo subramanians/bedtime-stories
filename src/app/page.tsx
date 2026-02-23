@@ -19,6 +19,7 @@ export default function Home() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [backgroundTheme, setBackgroundTheme] = useState<BackgroundTheme>("night");
+  const [storySource, setStorySource] = useState<"ai" | "folktale">("ai");
 
   const handleSubmit = async (prefs: StoryPreferences) => {
     setError(null);
@@ -100,18 +101,51 @@ export default function Home() {
       <main className="relative mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12">
         {/* Header */}
         <header className="mb-8 text-center">
-          <h1 className="font-display animate-float text-4xl font-bold tracking-tight text-warm-cream sm:text-5xl md:text-6xl">
+          <h1 className="font-display animate-float text-4xl font-bold tracking-tight text-warm-cream sm:text-5xl md:text-6xl lg:text-7xl">
             Bedtime Stories
           </h1>
-          <p className="mt-2 text-lg text-warm-cream/75">
+          <p className="mt-2 text-xl text-warm-cream/75 sm:text-2xl">
             Create a personalized story or choose a classic folktale from around the world.
           </p>
         </header>
 
+        {/* Story type - first choice, at the very beginning */}
+        {!storyResult?.story && (
+          <div className="mb-8">
+            <p className="mb-4 text-center text-lg font-medium text-warm-cream/90 sm:text-xl">
+              What kind of story would you like?
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <button
+                type="button"
+                onClick={() => setStorySource("ai")}
+                className={`rounded-2xl border-2 px-6 py-4 text-lg font-semibold transition sm:px-8 sm:py-5 sm:text-xl ${
+                  storySource === "ai"
+                    ? "border-warm-gold bg-warm-gold text-night-950 shadow-lg"
+                    : "border-white/30 bg-white/5 text-warm-cream/90 hover:border-white/50 hover:bg-white/10"
+                }`}
+              >
+                AI generated
+              </button>
+              <button
+                type="button"
+                onClick={() => setStorySource("folktale")}
+                className={`rounded-2xl border-2 px-6 py-4 text-lg font-semibold transition sm:px-8 sm:py-5 sm:text-xl ${
+                  storySource === "folktale"
+                    ? "border-warm-gold bg-warm-gold text-night-950 shadow-lg"
+                    : "border-white/30 bg-white/5 text-warm-cream/90 hover:border-white/50 hover:bg-white/10"
+                }`}
+              >
+                Classic folktale
+              </button>
+            </div>
+          </div>
+        )}
+
         {/* Background selector */}
         <div className="mb-8 flex justify-center">
           <fieldset className="rounded-2xl border border-white/15 bg-white/5 px-5 py-3 backdrop-blur-sm">
-            <legend className="px-1 text-xs font-medium text-warm-cream/80">
+            <legend className="px-1 text-sm font-medium text-warm-cream/80 sm:text-base">
               Background
             </legend>
             <div className="flex flex-wrap justify-center gap-2">
@@ -120,7 +154,7 @@ export default function Home() {
                   key={t.id}
                   type="button"
                   onClick={() => setBackgroundTheme(t.id)}
-                  className={`rounded-xl px-4 py-2 text-sm font-medium transition ${
+                  className={`rounded-xl px-4 py-2 text-base font-medium transition sm:text-lg ${
                     backgroundTheme === t.id
                       ? "bg-warm-gold text-night-950 shadow-md"
                       : "text-warm-cream/90 hover:bg-white/10"
@@ -152,7 +186,11 @@ export default function Home() {
           />
         ) : (
           <div className="rounded-2xl border border-white/15 bg-white/5 p-6 shadow-xl backdrop-blur-sm sm:p-8">
-            <StoryForm onSubmit={handleSubmit} isGenerating={isGenerating} />
+            <StoryForm
+              onSubmit={handleSubmit}
+              isGenerating={isGenerating}
+              storySource={storySource}
+            />
           </div>
         )}
       </main>
