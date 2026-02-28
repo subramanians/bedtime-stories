@@ -6,12 +6,14 @@ import StoryDisplay from "@/components/StoryDisplay";
 import { getRandomFolktaleForAge } from "@/data/folktales";
 import type { StoryPreferences, StoryResponse } from "@/types/story";
 
-export type BackgroundTheme = "night" | "sunset" | "forest";
+export type BackgroundTheme = "night" | "sunset" | "forest" | "ocean" | "lavender";
 
 const THEMES: { id: BackgroundTheme; label: string }[] = [
   { id: "night", label: "Night Sky" },
   { id: "sunset", label: "Sunset" },
   { id: "forest", label: "Forest" },
+  { id: "ocean", label: "Ocean" },
+  { id: "lavender", label: "Lavender" },
 ];
 
 export default function Home() {
@@ -76,6 +78,14 @@ export default function Home() {
       bg: "bg-gradient-to-b from-[#0d1f0d] via-[#1a3d1a] to-[#1e3d2e]",
       moon: "from-emerald-200/25 to-lime-300/15",
     },
+    ocean: {
+      bg: "bg-gradient-to-b from-[#0c1445] via-[#1e3a5f] to-[#0d2137]",
+      moon: "from-cyan-200/25 to-teal-300/15",
+    },
+    lavender: {
+      bg: "bg-gradient-to-b from-[#2d1b4e] via-[#4a3a6e] to-[#3d2c5c]",
+      moon: "from-violet-200/25 to-purple-300/15",
+    },
   }[backgroundTheme];
 
   return (
@@ -84,13 +94,13 @@ export default function Home() {
     >
       {/* Decorative stars */}
       <div className="pointer-events-none fixed inset-0">
-        <div className={`absolute left-[10%] top-[15%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-warm-gold/80" : backgroundTheme === "sunset" ? "bg-amber-200/90" : "bg-emerald-300/80"}`} />
-        <div className={`absolute left-[20%] top-[25%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-white/70" : backgroundTheme === "sunset" ? "bg-orange-100/80" : "bg-lime-200/60"}`} style={{ animationDelay: "0.5s" }} />
-        <div className={`absolute left-[75%] top-[20%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-warm-gold/60" : backgroundTheme === "sunset" ? "bg-amber-200/70" : "bg-emerald-300/70"}`} style={{ animationDelay: "1s" }} />
-        <div className={`absolute left-[85%] top-[35%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-white/50" : backgroundTheme === "sunset" ? "bg-orange-100/60" : "bg-lime-200/50"}`} style={{ animationDelay: "1.5s" }} />
-        <div className={`absolute left-[5%] top-[60%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-warm-gold/70" : backgroundTheme === "sunset" ? "bg-amber-200/80" : "bg-emerald-300/70"}`} style={{ animationDelay: "0.3s" }} />
-        <div className={`absolute left-[90%] top-[70%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-white/60" : backgroundTheme === "sunset" ? "bg-orange-100/70" : "bg-lime-200/60"}`} style={{ animationDelay: "2s" }} />
-        <div className={`absolute left-[50%] top-[10%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-warm-gold/50" : backgroundTheme === "sunset" ? "bg-amber-200/60" : "bg-emerald-300/60"}`} style={{ animationDelay: "0.8s" }} />
+        <div className={`absolute left-[10%] top-[15%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-warm-gold/80" : backgroundTheme === "sunset" ? "bg-amber-200/90" : backgroundTheme === "forest" ? "bg-emerald-300/80" : backgroundTheme === "ocean" ? "bg-cyan-300/80" : "bg-violet-300/80"}`} />
+        <div className={`absolute left-[20%] top-[25%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-white/70" : backgroundTheme === "sunset" ? "bg-orange-100/80" : backgroundTheme === "forest" ? "bg-lime-200/60" : backgroundTheme === "ocean" ? "bg-teal-200/70" : "bg-purple-200/70"}`} style={{ animationDelay: "0.5s" }} />
+        <div className={`absolute left-[75%] top-[20%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-warm-gold/60" : backgroundTheme === "sunset" ? "bg-amber-200/70" : backgroundTheme === "forest" ? "bg-emerald-300/70" : backgroundTheme === "ocean" ? "bg-cyan-300/70" : "bg-violet-300/70"}`} style={{ animationDelay: "1s" }} />
+        <div className={`absolute left-[85%] top-[35%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-white/50" : backgroundTheme === "sunset" ? "bg-orange-100/60" : backgroundTheme === "forest" ? "bg-lime-200/50" : backgroundTheme === "ocean" ? "bg-teal-200/60" : "bg-purple-200/60"}`} style={{ animationDelay: "1.5s" }} />
+        <div className={`absolute left-[5%] top-[60%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-warm-gold/70" : backgroundTheme === "sunset" ? "bg-amber-200/80" : backgroundTheme === "forest" ? "bg-emerald-300/70" : backgroundTheme === "ocean" ? "bg-cyan-300/70" : "bg-violet-300/70"}`} style={{ animationDelay: "0.3s" }} />
+        <div className={`absolute left-[90%] top-[70%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-white/60" : backgroundTheme === "sunset" ? "bg-orange-100/70" : backgroundTheme === "forest" ? "bg-lime-200/60" : backgroundTheme === "ocean" ? "bg-teal-200/70" : "bg-purple-200/70"}`} style={{ animationDelay: "2s" }} />
+        <div className={`absolute left-[50%] top-[10%] h-1 w-1 animate-twinkle rounded-full ${backgroundTheme === "night" ? "bg-warm-gold/50" : backgroundTheme === "sunset" ? "bg-amber-200/60" : backgroundTheme === "forest" ? "bg-emerald-300/60" : backgroundTheme === "ocean" ? "bg-cyan-300/60" : "bg-violet-300/60"}`} style={{ animationDelay: "0.8s" }} />
       </div>
 
       {/* Moon glow */}
